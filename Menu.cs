@@ -7,6 +7,9 @@ public static class Menu
         Console.ForegroundColor = ConsoleColor.Black;
 
         DrawScreen();
+        WriteOptions();
+
+        var option = short.Parse(Console.ReadLine());
     }
 
     public static void DrawScreen()
@@ -42,4 +45,24 @@ public static class Menu
     }
 
     private static void BreakLine() => Console.Write(Environment.NewLine);
+
+    public static void WriteOptions()
+    {
+        Console.SetCursorPosition(3,2);
+        Console.WriteLine("HTML Editor");
+        Console.SetCursorPosition(3,3);
+        Console.WriteLine("============");
+        Console.SetCursorPosition(3,4);
+        Console.WriteLine("Select an option");
+        Console.SetCursorPosition(3,6);
+        Console.WriteLine("1 - New file");
+        Console.SetCursorPosition(3,7);
+        Console.WriteLine("2 - Open");
+        Console.SetCursorPosition(3,9);
+        Console.WriteLine("0 - Exit");
+        Console.SetCursorPosition(3,10);
+        Console.Write("Option: ");
+
+
+    }
 }
