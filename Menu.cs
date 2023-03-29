@@ -10,6 +10,7 @@ public static class Menu
         WriteOptions();
 
         var option = short.Parse(Console.ReadLine());
+        HandleMenuOption(option);
     }
 
     public static void DrawScreen()
@@ -48,21 +49,35 @@ public static class Menu
 
     public static void WriteOptions()
     {
-        Console.SetCursorPosition(3,2);
+        Console.SetCursorPosition(3, 2);
         Console.WriteLine("HTML Editor");
-        Console.SetCursorPosition(3,3);
+        Console.SetCursorPosition(3, 3);
         Console.WriteLine("============");
-        Console.SetCursorPosition(3,4);
+        Console.SetCursorPosition(3, 4);
         Console.WriteLine("Select an option");
-        Console.SetCursorPosition(3,6);
+        Console.SetCursorPosition(3, 6);
         Console.WriteLine("1 - New file");
-        Console.SetCursorPosition(3,7);
+        Console.SetCursorPosition(3, 7);
         Console.WriteLine("2 - Open");
-        Console.SetCursorPosition(3,9);
+        Console.SetCursorPosition(3, 9);
         Console.WriteLine("0 - Exit");
-        Console.SetCursorPosition(3,10);
+        Console.SetCursorPosition(3, 10);
         Console.Write("Option: ");
+    }
 
-
+    public static void HandleMenuOption(short option)
+    {
+        switch (option)
+        {
+            case 1: Console.WriteLine("Editor"); break;
+            case 2: Console.WriteLine("View"); break;
+            case 0:
+                {
+                    Console.Clear();
+                    Environment.Exit(0);
+                    break;
+                }
+            default: Show(); break;
+        }
     }
 }
