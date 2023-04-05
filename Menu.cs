@@ -47,8 +47,8 @@ public static class Menu
 
     private static void BreakLine() => Console.Write(Environment.NewLine);
 
-    public static void WriteOptions()
-    {
+public static void WriteOptions()
+{
         Console.SetCursorPosition(3, 2);
         Console.WriteLine("HTML Editor");
         Console.SetCursorPosition(3, 3);
@@ -69,7 +69,7 @@ public static class Menu
     {
         switch (option)
         {
-            case 1: Console.WriteLine("Editor"); break;
+            case 1: Editor.Show(); break;
             case 2: Console.WriteLine("View"); break;
             case 0:
                 {
