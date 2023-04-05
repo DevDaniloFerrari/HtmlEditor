@@ -19,6 +19,23 @@ public class Viewer
     public static void Replace(string text)
     {
         var strong = new Regex(@"<\s*strong[^>]*>(.*?)<\s*/\s*strong>");
-        Console.WriteLine(text);
+        var words = text.Split(' ');
+
+        foreach (var word in words)
+        {
+            if (strong.IsMatch(word))
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                var boldWord = word.Substring(word.IndexOf('>') + 1, ((word.LastIndexOf('<') - 1) - word.IndexOf('>')));
+                Console.Write(boldWord);
+                Console.Write(" ");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.Write(word);
+                Console.Write(" ");
+            }
+        }
     }
 }
